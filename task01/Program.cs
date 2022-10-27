@@ -1,13 +1,10 @@
-﻿using System.Net.Http.Json;
-using System.Runtime.CompilerServices;
-using System.Threading.Channels;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace task01;
 
 class Program
 {
-    static HttpClient client = new();
+    static HttpClient _client = new();
 
     static void Main()
     {
@@ -16,71 +13,70 @@ class Program
     static async Task RunAsync()
     {
         Random rnd = new Random();
-        var API_KEY = "9f74a9ce6cc82482fabb284c2894a2f2";
-        var UPPER = 50;
-        List<WeatherOBJ> Collection = new List<WeatherOBJ>();
+        var apiKey = "9f74a9ce6cc82482fabb284c2894a2f2";
+        var upper = 50;
+        List<WeatherOBJ> collection = new List<WeatherOBJ>();
         
         
-        for (int i = 0; i < UPPER; i++)
+        for (int i = 0; i < upper; i++)
         {
             double lon = rnd.Next(-180,180);
             double lat = rnd.Next(-90, 90);
-            string url = $"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}";
-            var response = await client.GetAsync(url);
-            var text_res = await response.Content.ReadAsStringAsync();
-            WeatherOBJ wl = JsonConvert.DeserializeObject<WeatherOBJ>(text_res);
+            string url = $"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}";
+            var response = await _client.GetAsync(url);
+            var textRes = await response.Content.ReadAsStringAsync();
+            WeatherOBJ wl = JsonConvert.DeserializeObject<WeatherOBJ>(textRes);
             if (wl.Country == "" || wl.Name == "")
-                UPPER++;
+                upper++;
             else
-            {
-                Collection.Add(wl);
-            }
+                collection.Add(wl);
         }
 
-        // foreach (var VARIABLE in Collection)
-        // {
-        //     Console.WriteLine($"{VARIABLE.Country}; {VARIABLE.Name}; {VARIABLE.Description}; {VARIABLE.Temp}");
-        // }
-        //
-        // Console.WriteLine('\n');
+        foreach (var variable in collection)
+        {
+            Console.WriteLine($"{variable.Country}; {variable.Name}; {variable.Description}; {variable.Temp}");
+        }
+        
+        Console.WriteLine('\n');
+        
         // Температура
     
-        double MinT = (from w in Collection select w.Temp).Min();
-        var countryMinT = from w in Collection where w.Temp == MinT select w.Country;
-        foreach (var VARIABLE in countryMinT)
+        double minT = (from w in collection select w.Temp).Min();
+        var countryMinT = from w in collection where w.Temp == minT select w.Country;
+        foreach (var variable in countryMinT)
         {
-            Console.WriteLine($"min temp: {VARIABLE} - {MinT}C");
+            Console.WriteLine($"min temp: {variable} - {minT}C");
         }
-        double MaxT = (from w in Collection select w.Temp).Max();
-        var countryMaxT = from w in Collection where w.Temp == MaxT select w.Country;
-        foreach (var VARIABLE in countryMaxT)
+        double maxT = (from w in collection select w.Temp).Max();
+        var countryMaxT = from w in collection where w.Temp == maxT select w.Country;
+        foreach (var variable in countryMaxT)
         {
-            Console.WriteLine($"max temp: {VARIABLE} - {MaxT}C");
+            Console.WriteLine($"max temp: {variable} - {maxT}C");
         }
         
         // Количество стран
         
-        int Count = (from w in Collection select w.Country).Distinct().Count();
-        Console.WriteLine($"Count of countries: {Count}");
+        int count = (from w in collection select w.Country).Distinct().Count();
+        Console.WriteLine($"Count of countries: {count}");
         
         // Средняя температура
 
-        double Ave = (from w in Collection select w.Temp).Average();
-        Console.WriteLine($"Average temp: {Ave}C");
+        double ave = (from w in collection select w.Temp).Average();
+        Console.WriteLine($"Average temp: {ave}C");
         
         // clear sky & rain & few clouds
         
         string[] arr = new[] {"clear sky", "rain", "few clouds" };
-        foreach (var VARIABLE in arr)
+        foreach (var variable in arr)
         {
             try
             {
-                var weatherLoc = (from w in Collection where w.Description == VARIABLE select w).First();
-                Console.WriteLine($"{VARIABLE}: {weatherLoc.Country}; {weatherLoc.Name}");
+                var weatherLoc = (from w in collection where w.Description == variable select w).First();
+                Console.WriteLine($"{variable}: {weatherLoc.Country}; {weatherLoc.Name}");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No places with {VARIABLE}");
+                Console.WriteLine($"No places with {variable}");
             }
                 
                 
