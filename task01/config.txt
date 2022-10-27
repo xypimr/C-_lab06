@@ -1,0 +1,50 @@
+FI; Kittilä; scattered clouds; -6,019999999999982
+KZ; Derzhavīnsk; overcast clouds; -0,6899999999999977
+RU; Taksimo; clear sky; -13,560000000000002
+MA; Temara; clear sky; 30,79000000000002
+ID; Langsa; moderate rain; 28,25
+RU; Dzerzhinskoye; overcast clouds; 1,7900000000000205
+ET; Kebri Dahar; scattered clouds; 29,30000000000001
+US; Coldfoot; overcast clouds; -14,529999999999973
+PF; Moerai; overcast clouds; 22,600000000000023
+RU; Antipayuta; overcast clouds; -2,3100000000000023
+BR; Plácido de Castro; broken clouds; 23,149999999999977
+CA; Hall Beach; clear sky; -19,099999999999994
+RU; Ust-Tsilma; light snow; 0,2400000000000091
+GB; Whitburn; overcast clouds; 13,680000000000007
+GL; Qeqqata; overcast clouds; 1,6899999999999977
+PT; Faro (Sé); broken clouds; 22,389999999999986
+AU; Laverton; scattered clouds; 26,680000000000007
+RU; Inta; light snow; -1,75
+ID; Pangkalan Brandan; overcast clouds; 25,870000000000005
+ID; Sangiang; overcast clouds; 28,25
+KZ; Aksay; overcast clouds; 4,990000000000009
+IR; Kalāteh-ye Karbalā’ī Ḩājjī; clear sky; 21
+RU; Ozernovskiy; overcast clouds; 6,569999999999993
+US; Norton Shores; broken clouds; 9,170000000000016
+AU; Maningrida; broken clouds; 28,860000000000014
+BR; Canutama; overcast clouds; 23,110000000000014
+US; Anna Maria; broken clouds; 24,439999999999998
+MY; Sarikei; overcast clouds; 27,230000000000018
+CL; Antofagasta; clear sky; -5,25
+MN; Bulagiyn Denj; overcast clouds; -2,8899999999999864
+RU; Yar-Sale; overcast clouds; -2
+BW; Dutlwe; overcast clouds; 30,639999999999986
+US; Glennallen; overcast clouds; -8,389999999999986
+MG; Beroroha; clear sky; 35,89999999999998
+CA; Cambridge Bay; overcast clouds; -26,75999999999999
+IR; Chabahar; clear sky; 29,889999999999986
+; Antarctica; broken clouds; -35,370000000000005
+RU; Sakha; overcast clouds; -17,590000000000003
+AT; Sankt Gallenkirch; broken clouds; 16,620000000000005
+ET; Debre Werk’; broken clouds; 24,930000000000007
+US; San Miguel; clear sky; 10,490000000000009
+CN; Xitieshan; overcast clouds; 7,779999999999973
+ID; Leksula; overcast clouds; 29,439999999999998
+CA; Kaslo; light snow; -3,019999999999982
+GP; Beauséjour; overcast clouds; 27,75
+US; Lincoln; broken clouds; 11,029999999999973
+RU; Leshukonskoye; light snow; 0,6999999999999886
+RU; Muravlenko; broken clouds; -4,5
+ES; Castejón de Valdejasa; overcast clouds; 18,680000000000007
+SL; Kayima; light rain; 29
